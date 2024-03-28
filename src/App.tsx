@@ -1,13 +1,14 @@
 import { useState } from "react";
-import Navbar from "./components/Navbar";
-import Cart from "./components/Cart";
 
 function App() {
-  const [cartItems, setCartItems] = useState(['product1', 'product2', 'product3']);
+  const [pizza, setPizza] = useState({name: 'Spicy Pepperoni', toppings: ['Mushroom'],});
+
+  const handleClick = () => {
+    setPizza({...pizza, toppings: [...pizza.toppings, 'Cheese']})
+  }
   return (
     <div>
-      <Navbar cartItemsCount={cartItems.length}/>
-      <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
+      <button onClick={handleClick}>click me</button>
     </div>
   );
 }
