@@ -1,6 +1,6 @@
 import { FieldValues, useForm } from "react-hook-form";
 import { z } from 'zod';
-import { zodResolver } from "@hookform/resolvers/zod";
+import { zodResolver } from "@hookform/resolvers/zod/dist/zod.js";
 
 const schema = z.object ({
   name: z.string().min(3, { message: 'Name must be at least 3 characters'}),
